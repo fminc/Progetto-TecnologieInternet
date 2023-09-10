@@ -1,0 +1,115 @@
+.form-box {
+  width: 300px;
+  height: 250px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #111;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  overflow: hidden;
+  cursor: pointer;
+  }
+  
+  .form-container label {
+    color: #fff; 
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .form-container h2 {
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .form-container input {
+    width: 250px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    position: relative; 
+    z-index: 2; 
+  }
+
+  
+
+  /* Styles for the Login form */
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styles for the input fields inside the Login form */
+#loginForm input {
+  width: 250px; 
+  padding: 5px;
+  margin: 5px 0;
+}
+
+/* Styles for the Login button inside the Login form */
+#loginForm .login-button {
+  margin-top: 10px; 
+}
+
+#loginForm .subscribe-button {
+  margin-top: 10px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-container input {
+  width: 250px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* Position the buttons under the password input */
+#loginForm .login-button {
+  width: 120px; 
+  height: 40px; 
+  margin-top: 75px; 
+  margin-left: 40px;
+}
+#loginForm .subscribe-button {
+  width: 120px; 
+  height: 40px; 
+  margin-top: 75px; 
+  margin-right: 40px;
+}
+
+/* Display the buttons side by side */
+#loginForm .login-button {
+  float: left;
+}
+
+#loginForm .subscribe-button {
+  float: right;
+}
+
+/* Clear the float to prevent layout issues */
+#loginForm::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+

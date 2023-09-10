@@ -1,0 +1,41 @@
+#rankingDataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80%; 
+  max-width: 400px;
+  background: #111;
+  z-index: 1;
+}
+
+#rankingDataContainer ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+#rankingDataContainer ol li {
+  color: white;
+  padding: 10px;
+}
+
+#rankingDataContainer h2 {
+  color: white;
+}
+
+#backButton {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: auto;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/button-animation.css">
+    <link rel="stylesheet" href="css/winner-lose-animation.css">
+    <link rel="stylesheet" href="css/loading-animation.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <audio id="backgroundMusic" autoplay loop preload="auto">
+        <source src="audio/middle.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="enteringSound" preload="auto">
+        <source src="audio/entering.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="niceCall" preload="auto">
+        <source src="audio/nicecall.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="draw" preload="auto">
+        <source src="audio/draw.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="winSound" preload="auto">
+        <source src="audio/win.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="failureSound" preload="auto">
+        <source src="audio/failure.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="victorySound" preload="auto">
+        <source src="audio/victory.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="defeatedSound" preload="auto">
+        <source src="audio/defeated.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="lostFanfare" preload="auto">
+        <source src="audio/lostFanfare.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="winFanfare" preload="auto">
+        <source src="audio/winFanfare.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="gif-background">
+        <div class="background-gif"></div>
+    </div>
+    <div class="container">
+        <div class="title-container">
+            <img src="./assets/title.png" alt="Rock Paper Scissors" class="title-image">
+        </div>
+    </div>
+    <div class="center-box" id="initial">
+        <div class="center-content">
+            <button class="form-control  glow-on-hover" onclick="createGame()">Create Game</button>
+            <div class="text-center" style="color: white; font-size: 1.2;">OR</div>
+            <input class="form-control" placeholder="Enter Code" type="text" name="" id="roomUniqueId" />
+            <button class="form-control  glow-on-hover" onclick="joinGame()">Join Game</button>
+        </div>
+    </div>
+    <div id="gamePlay" class="game-container">
+        <div id="waitingArea" class="h4 waiting-text">
+
+        </div>
+        <div id="gameArea" class="game-area" style="display:none;">
+            <div class="your-section" color="white">
+                You:
+                <div id="player1Choice">
+                    <button id="rockButton" class="rock" onclick="sendChoice('Rock')"></button>
+                    <button id="paperButton" class="paper" onclick="sendChoice('Paper')"></button>
+                    <button id="scissorButton" class="scissor" onclick="sendChoice('Scissor')"></button>
+                </div>
+            </div>
+            <div class="opponent-section">
+                Opponent:
+                <div id="player2Choice">
+                    <p id="opponentState" class="waiting-text" style="display: none;">Waiting for Opponent</p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+    </div> 
+    <div id="scoreBox" class="score-box" style="display: none;">
+            <p id="player1Score" class="score-text" style="font-size: 20px;" >Player1: 0</p>
+            <p id="player2Score" class="score-text" style="font-size: 20px;">Player2: 0</p>
+    </div> 
+    <div id="winnerArea" class="display-4" style="display: none;">
+         
+    </div>
+    <section>
+        <h1 id="winnerText" class="text-shadow" style="display: none;"> </h1>
+        <div class="animation-container" style="display: none;">
+            <div>
+              <p>l</p>
+              <p>o</p>
+              <p>a</p>
+              <p>d</p>
+              <p>i</p>
+              <p>n</p>
+              <p>g</p>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/game.js"></script>
+   
+</body>
+</html>
